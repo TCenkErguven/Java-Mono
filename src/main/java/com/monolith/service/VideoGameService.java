@@ -19,19 +19,6 @@ public class VideoGameService extends ServiceManager<VideoGame,Long> {
         super(repository);
         this.repository = repository;
     }
-    public VideoGame save(VideoGame videoGame){
-        return repository.save(videoGame);
-    }
-    public Optional<VideoGame> findById(Long id){
-        Optional<VideoGame> result = repository.findById(id);
-        if(result.isEmpty()){
-            System.out.println("Search Error");
-        }
-        return result;
-    }
-    public List<VideoGame> findAll(){
-        return repository.findAll();
-    }
 
     public FindByVideoGameNameResponseDto findVideoGameByName(String name){
         FindByVideoGameNameResponseDto result = repository.findVideoGameByName(name);

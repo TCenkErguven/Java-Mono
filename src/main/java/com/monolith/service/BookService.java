@@ -18,19 +18,7 @@ public class BookService extends ServiceManager<Book,Long> {
         super(repository);
         this.repository = repository;
     }
-    public Book save(Book book){
-        return repository.save(book);
-    }
-    public Optional<Book> findById(Long id){
-        Optional<Book> result = repository.findById(id);
-        if(result.isEmpty()){
-            System.out.println("Search Error");
-        }
-        return result;
-    }
-    public List<Book> findAll(){
-        return repository.findAll();
-    }
+
     public List<FindAllByBookResponseDto> findAllBookByName(String name){
         List<FindAllByBookResponseDto> result = repository.findAllBookByName(name);
         return result;
